@@ -1,2 +1,0 @@
-# La-Estrellafugaz-Esprendedora
-D
