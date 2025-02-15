@@ -1,0 +1,107 @@
+<!DOCTYPE html>  <html lang="es">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>¿Me das otra oportunidad?</title>  
+    <link rel="stylesheet" href="styles.css">  
+</head>  
+<body>  
+    <div class="container">  
+        <h2>¿Volveremos a hablar? ¿Me vas a dejar hacerlo?</h2>  
+        <!-- Primer GIF al cargar la página -->  
+        <img id="mainGif" src="https://media.giphy.com/media/GwskZm1jXg8cDvuZJ6/giphy.gif" alt="Gif romántico" class="gif">    <!-- GIF para reacciones (no se muestra al inicio) -->  
+    <img id="reactionGif" class="gif" style="display: none;">  
+      
+    <div class="buttons">  
+        <button id="yes">Sipirili, obvio</button>  
+        <button id="no">Noporolo</button>  
+    </div>  
+</div>  
+
+<script src="script.js"></script>
+
+</body>  
+</html>
+
+const noButton = document.getElementById("no");
+const yesButton = document.getElementById("yes");
+const reactionGif = document.getElementById("reactionGif");
+const mainGif = document.getElementById("mainGif");
+
+noButton.addEventListener("click", () => {
+let currentSize = parseFloat(window.getComputedStyle(noButton).fontSize);
+let yesSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+
+if (currentSize > 5) {    
+    noButton.style.fontSize = (currentSize * 0.8) + "px";    
+    yesButton.style.fontSize = (yesSize * 1.2) + "px";    
+}  
+
+if (currentSize < 6) {  
+    noButton.style.display = "none";   
+}  
+
+// Ocultar el GIF principal  
+mainGif.style.display = "none";  
+
+// Cambia el GIF cuando tocan "No"  
+reactionGif.src = "https://media.giphy.com/media/wfS4vDyVsASQygl4mN/giphy.gif";    
+reactionGif.style.display = "block";
+
+});
+
+yesButton.addEventListener("click", () => {
+alert("SIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIUIIUIIIIIIIIIIIIIIIIIIIIIISBXXKX TKMMMMM😭😭😭  🫂💕");
+
+// Ocultar el GIF principal  
+mainGif.style.display = "none";  
+
+// Cambia el GIF cuando tocan "Sí"  
+reactionGif.src = "https://media.giphy.com/media/IzXiddo2twMmdmU8Lv/giphy.gif";    
+reactionGif.style.display = "block";
+
+});
+
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+background-color: #ffcccc;
+}
+
+.container {
+margin-top: 50px;
+}
+
+h2 {
+color: #d147a3;
+}
+
+.gif {
+width: 200px;
+margin: 20px 0;
+}
+
+.buttons {
+display: flex;
+justify-content: center;
+gap: 20px;
+}
+
+button {
+font-size: 18px;
+padding: 10px 20px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+transition: all 0.3s ease-in-out;
+}
+
+#yes {
+background-color: #ff66b2;
+color: white;
+}
+
+#no {
+background-color: #ff4d4d;
+color: white;
+}
